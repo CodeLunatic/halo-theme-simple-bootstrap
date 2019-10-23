@@ -1,0 +1,55 @@
+/*
+链接界面的样式
+Status: OK
+ */
+/*链接分类和链接的默认字体颜色*/
+#linkCategory .category-button, .link-grid .link {
+    color: #333;
+}
+
+/*链接分类和链接的鼠标划过字体颜色*/
+#linkCategory .category-button:hover, .link-grid .link:hover {
+    color: #dc3545;
+}
+
+/*链接盒子*/
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+}
+
+/*XL宽度以下的样式*/
+@media (max-width: 1200px) {
+    .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 宽度在MD以上 */
+@media (min-width: 768px) {
+    /*导航盒子*/
+    #linkCategory {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 2rem;
+    }
+
+    /*导航盒子的高度*/
+    #linkCategory .card {
+        max-height: 90vh;
+    }
+
+    /*目录超出盒子的处理*/
+    #linkCategoryList {
+        overflow-y: auto;
+    }
+}
+
+/*MD宽度以下的样式*/
+@media (max-width: 768px) {
+    .link-grid {
+        grid-template-columns: 100%;
+        column-gap: 0;
+    }
+}

@@ -1,0 +1,145 @@
+general:
+  label: 基本设置
+  items:
+    open_rss:
+      name: open_rss
+      label: 是否启用RSS
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 启用
+        - value: false
+          label: 关闭
+    open_read_progress:
+      name: open_read_progress
+      label: 是否使用阅读进度条和目录进度
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    link_on_blank_page:
+      name: link_on_blank_page
+      label: 启用新标签页打开链接
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 启用
+        - value: false
+          label: 关闭
+    open_share:
+      name: open_share
+      label: 是否启用分享
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 启用
+        - value: false
+          label: 关闭
+    twitter_account_share:
+      name: twitter_account_share
+      label: 转发时@推特账号
+      type: text
+      default: ''
+      placeholder: '转发时@推特账号'
+    journals_description:
+      name: journals_description
+      label: 日志界面的描述信息
+      type: textarea
+      default: ''
+      placeholder: '日志界面的描述信息'
+user_info:
+  label: 用户信息
+  items:
+    user_location:
+      name: user_location
+      label: 位置信息
+      type: text
+      default: '北京 海淀'
+      placeholder: '住址'
+    github_url:
+      name: github_url
+      label: Github地址
+      type: text
+      default: ''
+      placeholder: 'Github地址'
+    qq_number:
+      name: qq_number
+      label: QQ账号(需开通 https://shang.qq.com/v3/widget.html)
+      type: number
+      default: ''
+      placeholder: 'QQ账号'
+    weibo_url:
+      name: weibo_url
+      label: 微博链接
+      type: text
+      default: ''
+      placeholder: '微博链接'
+    twitter_account:
+      name: twitter_account
+      label: 推特账号
+      type: text
+      default: ''
+      placeholder: '推特账号'
+    email_address:
+      name: email_address
+      label: 邮箱地址
+      type: email
+      default: ''
+      placeholder: '邮箱地址'
+code:
+  label: 代码设置
+  items:
+    line_number:
+      name: line_number
+      label: 是否显示行号
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    code_copy:
+      name: code_copy
+      label: 是否启用代码复制
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    code_type:
+      name: code_type
+      label: 是否在代码右上角显示代码类型
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    mobile_catalog:
+      name: mobile_catalog
+      label: 是否在手机上启用目录功能
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭

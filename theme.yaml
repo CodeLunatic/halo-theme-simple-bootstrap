@@ -1,0 +1,23 @@
+#id: 主题的唯一标识
+#name: 主题名称
+#author:
+#  name: 作者名称
+#  website: 作者网站
+#description: 主题描述
+#logo: 主题 Logo
+#website: 主题网址
+#website: 主题的 Github 仓库
+#version: 版本号
+
+# 详情请参考：https://halo.run/develop/theme.html#theme-yaml
+
+id: codelunatic_simple
+name: Simple BootStrap
+author:
+  name: CY
+  website: https://halo.cyblogs.top
+description: 使用BootStrap构建的简洁主题
+logo:
+website: https://halo.cyblogs.top
+repo: https://github.com/codelunatic/halo-theme-simple-bootstrap
+version: 1.0
