@@ -9,7 +9,7 @@ $(function () {
         keyword && keyword.trim() && element.html(
             element.html().replace(
                 new RegExp(`${keyword}`, "gim"),
-                `<span class="font-weight-bold text-danger">$&</span>`
+                `<span class="font-weight-bold search-highlight">$&</span>`
             )
         );
     };

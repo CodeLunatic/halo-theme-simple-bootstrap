@@ -7,16 +7,6 @@ Status: OK
     font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/*列表项中a标签划过样式*/
-.list-item a:hover {
-    color: #dc3545 !important;
-}
-
-/*文章摘要的样式*/
-.post-summary {
-    line-height: 2.2rem;
-}
-
 /*这里的定位后期标签过多的时候可能会出现问题*/
 #tags {
     position: sticky;
@@ -68,4 +58,119 @@ Status: OK
     margin-left: -.52rem;
     background: #e7e7e7 !important;
     /*font-weight: bold;*/
+}
+
+/*文章摘要的样式*/
+.post-summary {
+    line-height: 2.2rem;
+    overflow: hidden;
+}
+
+.thumbnail-img {
+    height: auto;
+}
+
+.thumbnail-img-lg {
+    display: none;
+}
+
+.thumbnail-img-sm {
+    display: none;
+}
+
+/*最小屏幕*/
+@media (min-width: 320px) {
+
+    small.custom-small-mt {
+        margin-top: 1.2rem !important;
+    }
+
+    .h4, h4 {
+        font-size: 1.2rem;
+    }
+
+    .post-summary {
+        max-height: 100px;
+    }
+}
+
+/*中屏手机*/
+@media (min-width: 375px) {
+
+    .thumbnail-img-sm {
+        display: block;
+    }
+
+    .post-summary {
+        max-height: 64px;
+    }
+
+    .thumbnail-img {
+        max-height: 68px;
+    }
+}
+
+/* 大屏手机 */
+@media (min-width: 425px) {
+
+    .post-summary {
+        max-height: 100px;
+    }
+
+    .thumbnail-img {
+        max-height: 88px;
+    }
+
+    small.custom-small-mt {
+        margin-top: 1rem !important;
+    }
+}
+
+/*特大屏手机*/
+@media (min-width: 576px) {
+
+    small.custom-small-mt {
+        margin-top: 1.2rem !important;
+    }
+
+    .thumbnail-img {
+        max-height: 88px;
+    }
+}
+
+/*平板*/
+@media (min-width: 768px) {
+
+    .h4, h4 {
+        font-size: 1.5rem;
+    }
+
+    .thumbnail-img-lg {
+        max-height: 146px;
+        display: block;
+    }
+
+    .thumbnail-img-sm {
+        display: none;
+    }
+}
+
+/*微型电脑*/
+@media (min-width: 992px) {
+
+    .thumbnail-img-lg {
+        max-height: 160px;
+    }
+}
+
+/*其他电脑*/
+@media (min-width: 1200px) {
+
+    small.custom-small-mt {
+        margin-top: 1.5rem !important;
+    }
+
+    .thumbnail-img-lg {
+        max-height: 132px;
+    }
 }

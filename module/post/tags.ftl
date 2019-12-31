@@ -1,6 +1,6 @@
 <#--文章界面标签部分ok-->
 <@tagTag method="list">
-    <#if post.tags?size != 0>
+    <#if (post.tags)?? && post.tags?size != 0>
         <section id="tags" class="mb-lg-4 mb-5">
             <div class="card">
                 <div class="card-header">

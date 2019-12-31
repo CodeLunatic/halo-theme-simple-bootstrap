@@ -1,5 +1,5 @@
 <#--标签界面左侧ok-->
-<#if posts.content?size lte 0>
+<#if (posts.content)?? && posts.content?size lte 0>
 <#--无结果-->
     <div class="alert alert-danger mt-4" role="alert">
         <i class="far fa-tired mr-2"></i>

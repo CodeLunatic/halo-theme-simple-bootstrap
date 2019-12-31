@@ -1,12 +1,12 @@
 <#--分类界面的左边ok-->
-<#if posts.content?size lte 0>
+<#if (posts.content)?? && posts.content?size lte 0>
 <#--无结果-->
     <div class="alert alert-danger mt-4" role="alert">
         <i class="far fa-tired mr-2"></i>
         "${category.name!}"分类下啥都没有
     </div>
 <#--分类描述-->
-    <#if category.description?? && category.description != ''>
+    <#if (category.description)?? && category.description != ''>
         <div class="category-description mt-4 text-muted">
             分类描述：${category.description!}
         </div>
@@ -25,7 +25,7 @@
         当前位于"${category.name!}"分类下
     </div>
 <#--分类描述-->
-    <#if category.description?? && category.description != ''>
+    <#if (category.description)?? && category.description != ''>
         <div class="category-description mt-4 text-muted">
             分类描述：${category.description!}
         </div>

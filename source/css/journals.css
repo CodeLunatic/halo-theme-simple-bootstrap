@@ -12,11 +12,20 @@ Status: OK
 /*日志内容*/
 .journals .journal-item .journal-content {
     line-height: 1.8rem;
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /*所有的iframe全屏幕显示*/
-.journals .journal-item .journal-content iframe, audio, video {
+.journals .journal-item .journal-content iframe,
+.journals .journal-item .journal-content audio,
+.journals .journal-item .journal-content video {
     width: 100%;
+    margin: 1rem 0;
+}
+
+/*单个图片的问题处理*/
+.journals .journal-item .journal-content img {
+    max-width: 100%;
     margin: 1rem 0;
 }
 
@@ -32,11 +41,6 @@ Status: OK
 /*用户的操作链接颜色*/
 .journals .journal-item .journal-operation a {
     color: #6c757d !important;
-}
-
-/*用户的操作链接划过颜色*/
-.journals .journal-item .journal-operation a:hover {
-    color: #dc3545 !important;
 }
 
 /*导航栏固定*/

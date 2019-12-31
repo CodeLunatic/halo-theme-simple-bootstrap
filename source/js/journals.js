@@ -31,18 +31,19 @@ $(function () {
     let reBuildImage = () => {
         // 遍历所有的日志内容盒子
         $(`.journal-content`).each(function () {
+            // 找到所有的fancybox图片
+            let images = $(this).find(`[data-fancybox="images"]`);
+            // 计算每个盒子下面有多少张图片
+            let imgLength = images.length;
+            if (imgLength === 1) return;
+            // 为所有的fancybox图片加上间距和宽度
+            images.addClass("pt-1 pr-1").css({'width': `100%`});
             // 遍历里面的所有的图片，替换成背景图
             $(this).find(`img`).each(function () {
                 $(this).replaceWith(
                     $(`<i class="picture" style="background-image: url('${$(this).attr('src')}');"></i>`)
                 );
             });
-            // 找到所有的fancybox图片
-            let images = $(this).find(`[data-fancybox="images"]`);
-            // 为所有的fancybox图片加上间距和宽度
-            images.addClass("pt-1 pr-1").css({'width': `100%`});
-            // 计算每个盒子下面有多少张图片
-            let imgLength = images.length;
             // 如果有4张图片，做特殊处理
             if (imgLength === 4) {
                 // 上面两张

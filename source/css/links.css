@@ -3,13 +3,12 @@
 Status: OK
  */
 /*链接分类和链接的默认字体颜色*/
-#linkCategory .category-button, .link-grid .link {
-    color: #333;
+#linkBox {
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/*链接分类和链接的鼠标划过字体颜色*/
-#linkCategory .category-button:hover, .link-grid .link:hover {
-    color: #dc3545;
+#linkCategory .category-button, .link-grid .link {
+    color: #333;
 }
 
 /*链接盒子*/
@@ -22,7 +21,15 @@ Status: OK
 /*XL宽度以下的样式*/
 @media (max-width: 1200px) {
     .link-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/*MD宽度以下的样式*/
+@media (max-width: 768px) {
+    .link-grid {
+        grid-template-columns: 100% !important;
+        column-gap: 0 !important;
     }
 }
 
@@ -43,13 +50,5 @@ Status: OK
     /*目录超出盒子的处理*/
     #linkCategoryList {
         overflow-y: auto;
-    }
-}
-
-/*MD宽度以下的样式*/
-@media (max-width: 768px) {
-    .link-grid {
-        grid-template-columns: 100%;
-        column-gap: 0;
     }
 }

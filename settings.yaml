@@ -1,6 +1,30 @@
 general:
   label: 基本设置
   items:
+    scrollbar_background_color:
+      name: scrollbar_background_color
+      label: 滚动条颜色
+      type: color
+      default: '#6c757d'
+      placeholder: '滚动条颜色'
+    link_color:
+      name: link_color
+      label: 链接颜色
+      type: color
+      default: '#007bff'
+      placeholder: '链接颜色'
+    hover_color:
+      name: hover_color
+      label: 鼠标滑过颜色
+      type: color
+      default: '#dc3545'
+      placeholder: '鼠标滑过颜色'
+    progress_color:
+      name: progress_color
+      label: 阅读进度条颜色
+      type: color
+      default: '#dc3545'
+      placeholder: '阅读进度条颜色'
     open_rss:
       name: open_rss
       label: 是否启用RSS
@@ -14,7 +38,7 @@ general:
           label: 关闭
     open_read_progress:
       name: open_read_progress
-      label: 是否使用阅读进度条和目录进度
+      label: 是否使用阅读进度条
       type: radio
       data-type: bool
       default: true
@@ -143,3 +167,15 @@ code:
           label: 开启
         - value: false
           label: 关闭
+    code_css_url:
+      name: code_css_url
+      label: 代码样式地址(https://www.bootcdn.cn/highlight.js/)
+      type: text
+      default: 'https://cdn.bootcss.com/highlight.js/9.15.10/styles/github.min.css'
+      placeholder: '代码样式地址'
+    code_font_family:
+      name: code_font_family
+      label: 代码字体(注意引号)
+      type: text
+      default: '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace'
+      placeholder: '代码字体'

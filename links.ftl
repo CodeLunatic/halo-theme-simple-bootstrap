@@ -3,6 +3,17 @@
 <@layout title="链接 | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
 
     <link rel="stylesheet" href="${static!}/source/css/links.css">
+    <style>
+        /* 链接分类、链接鼠标划过字体颜色 */
+        #linkCategory .category-button:hover, .link-grid .link:hover {
+            color: ${settings.hover_color?default('#dc3545')} !important;
+        }
+
+        /* 链接分类被激活的时候 */
+        .category-active {
+            color: ${settings.hover_color?default('#dc3545')} !important;
+        }
+    </style>
 
 <#--这个列表初始化隐藏，用JS来做显示操作-->
     <#include "module/links/hide_list.ftl"/>

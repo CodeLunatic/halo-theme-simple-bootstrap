@@ -7,33 +7,21 @@ a:focus {
     border: none;
 }
 
-/*所有的链接*/
-a:hover {
-    color: #dc3545;
-    text-decoration: none !important;
-}
-
 /*iframe默认全部隐藏*/
 iframe {
     display: none;
 }
 
-/*面包屑里面的链接*/
-.breadcrumb a:hover {
-    color: #dc3545 !important;
-    text-decoration: none !important;
-}
-
 /*选中样式*/
 ::selection {
-    background: rgba(0, 0, 0, .2);
-    color: #555;
+    background: #007bff !important;
+    color: #ffffff !important;
 }
 
 /*火狐浏览器选中样式*/
 ::-moz-selection {
-    background: rgba(0, 0, 0, .2);
-    color: #555;
+    background: #007bff !important;
+    color: #ffffff !important;
 }
 
 /*滚动条的控制按钮*/
@@ -44,18 +32,13 @@ iframe {
 /*定义滚动条高宽及背景-高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar {
     width: 0.375rem;
-    height: 0.1875rem;
+    height: 0.25rem;
     background-color: rgba(0, 0, 0, 0);
 }
 
 /*定义滚动条轨道*/
 ::-webkit-scrollbar-track {
-    background-color: #d3d3d3;
-}
-
-/*定义滑块*/
-::-webkit-scrollbar-thumb {
-    background-color: #6c757d;
+    background-color: rgba(0, 0, 0, .125);
 }
 
 /*返回顶部*/
@@ -117,12 +100,23 @@ iframe {
     border-color: #6c757d;
 }
 
-/*页面footer的链接样式*/
-footer .link-info a:hover {
-    color: #dc3545 !important;
-}
-
 /*搜索按钮的样式*/
 #search button {
     border: 1px solid #ced4da;
+}
+
+/*扩充样式*/
+.mb-4point5 {
+    margin-bottom: 2rem !important;
+}
+
+/* 弹出层弹出后禁止页面滚动 */
+.no-scroll,
+.no-scroll body {
+    overflow: hidden;
+}
+
+/* 弹出层弹出后禁止页面滚动 */
+.no-scroll body {
+    position: relative;
 }

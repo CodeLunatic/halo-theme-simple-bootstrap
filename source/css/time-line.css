@@ -45,11 +45,6 @@ ul.title-list li a {
     color: #586069;
 }
 
-/*列表盒子中每一个a标签的划过样式*/
-ul.title-list li a:hover {
-    color: #dc3545;
-}
-
 /*用户头像样式*/
 .user-avatar {
     margin-left: -0.3rem;
@@ -107,11 +102,6 @@ ul.title-list li a:hover {
 /*导航盒子中的链接默认样式*/
 #navigationList a {
     color: #333333;
-}
-
-/*导航盒子中的链接划过样式*/
-#navigationList a:hover {
-    color: #dc3545;
 }
 
 /*大于LG的时候*/

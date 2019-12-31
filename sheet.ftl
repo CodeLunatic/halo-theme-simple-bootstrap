@@ -8,7 +8,7 @@ description="${options.seo_description!}">
 
         <div class="row">
             <#--左侧-->
-            <div id="left" class="col-lg-8 pr-xl-5 px-lg-3 px-4 mt-4">
+            <div id="left" class="col-lg-8 pr-xl-5 px-lg-3 px-4 pt-4">
                 <#include "module/sheet/left.ftl">
             </div>
             <#-- 右侧 -->

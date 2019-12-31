@@ -212,7 +212,6 @@ Status: OK
 }
 
 .markdown-body a {
-    color: #0366d6;
     text-decoration: none;
 }
 
@@ -622,7 +621,7 @@ Status: OK
     font-size: 100%;
     word-break: normal;
     white-space: pre;
-    background: transparent;
+    /*background: transparent;*/
     border: 0;
 }
 
@@ -641,12 +640,12 @@ Status: OK
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
+    /*background-color: #f6f8fa;*/
     border-radius: 3px;
 }
 
 .markdown-body pre code {
-    display: inline;
+    /*display: inline;*/
     max-width: auto;
     padding: 0;
     margin: 0;

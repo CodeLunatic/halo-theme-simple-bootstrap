@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light container px-lg-2 py-3">
 
         <a class="navbar-brand font-weight-bold" href="${context!}">
-            <#if options.blog_logo?? && options.blog_logo?trim != ''>
+            <#if (options.blog_logo)?? && options.blog_logo?trim != ''>
                 <img src="${options.blog_logo!}" width="30" height="30"
                      class="d-inline-block align-top mr-2" alt="${options.blog_title!}">
             </#if>
@@ -21,8 +21,8 @@
                 <@menuTag method="list">
                     <#list menus?sort_by('priority') as menu>
                         <li class="nav-item">
-                            <a class="nav-link" href="${menu.url!}" target="${menu.target!}">
-                                <#if menu.icon?? && menu.icon?trim != ''>
+                            <a class="nav-link" href="<#if menu.url?starts_with("/")>${menu.url!}<#else>/${menu.url!}</#if>" target="${menu.target!}">
+                                <#if (menu.icon)?? && menu.icon?trim != ''>
                                     <span class="d-lg-none d-inline mr-2">${menu.icon}</span>
                                 <#else>
                                     <span class="d-lg-none d-inline mr-2"><i class="fas fa-link"></i></span>
@@ -32,27 +32,32 @@
                         </li>
                     </#list>
                 </@menuTag>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="d-lg-none d-inline mr-2"><i class="fas fa-list-ul"></i></span>
-                        分类
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <@categoryTag method="list">
-                            <#list categories as categorie>
-                                <a class="dropdown-item" href="/categories/${categorie.slugName}">${categorie.name}
-                                    (${categorie.postCount!})</a>
-                            </#list>
-                            <a class="dropdown-item" href="/categories">
-                                全部分类
-                                (<@postTag method="count">
-                                    ${count!}
-                                </@postTag>)
+                <@categoryTag method="list">
+                    <#if categories?? && categories?size gt 0>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-lg-none d-inline mr-2"><i class="fas fa-list-ul"></i></span>
+                                分类
                             </a>
-                        </@categoryTag>
-                    </div>
-                </li>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <#list categories as categorie>
+                                    <a class="dropdown-item" href="/categories/${categorie.slugName}">${categorie.name}
+                                        (${categorie.postCount!})</a>
+                                </#list>
+                                <a class="dropdown-item" href="/categories">
+                                    全部分类
+                                    (<@postTag method="count">
+                                        ${count!}
+                                    </@postTag>)
+                                </a>
+
+                            </div>
+                        </li>
+                    </#if>
+                </@categoryTag>
             </ul>
             <form id="search" class="form-inline my-2 my-lg-0" method="get" action="/search">
                 <input class="form-control mr-sm-2" name="keyword" type="search" value="${keyword!}"

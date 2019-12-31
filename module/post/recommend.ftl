@@ -1,5 +1,5 @@
 <#--文章界面推荐部分ok-->
-<#if post.categories?? && post.categories?size != 0>
+<#if (post.categories)?? && post.categories?size != 0>
     <@postTag method="listByCategoryId" categoryId="${post.categories[0].id!}">
         <#if posts?? && posts?size != 0>
             <section id="recommend" class="mb-lg-4 mb-5">

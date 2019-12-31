@@ -11,12 +11,25 @@ article pre code ol {
 
 /*代码行号样式*/
 article pre code ol li {
-    list-style: decimal-leading-zero;
+    list-style: none;
+    /*list-style: decimal-leading-zero;*/
     border-left: 1px solid #ddd !important;
     padding: 0 0.5rem 0 0.5rem !important;
     margin: 0 !important;
     line-height: 1.2rem;
     word-break: keep-all;
+    position: relative;
+}
+
+/* 自定义行号样式 */
+article pre code ol li:before {
+    position: absolute;
+    text-align: right;
+    content: attr(data-line-number);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    width: 1.5rem;
+    left: -2.28rem;
+    top: 0;
 }
 
 /*阅读进度样式*/
@@ -29,10 +42,9 @@ article pre code ol li {
     overflow: hidden;
 }
 
-/*阅读进度的进度条样式*/
-#readProgress .read-progress-bar {
-    background: #dc3545;
-    height: 0.1875rem;
+/*修复移动端英文标题过长不换行的问题*/
+#contentTitle {
+    word-break: break-all;
 }
 
 /*页面内容中的小文字（CY 2019年10月03日 807次浏览）*/
@@ -107,11 +119,6 @@ article pre code ol li {
     position: relative;
 }
 
-/*目录链接划过样式*/
-#catalogs p a:hover {
-    color: #dc3545;
-}
-
 /*目录链接前面的修饰*/
 #catalogs p a:before {
     content: "";
@@ -149,7 +156,7 @@ article pre code ol li {
     content: attr(data-code-format);
     top: 0;
     right: .375rem;
-    font-family: "Courier New", serif;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     color: #999999;
     font-size: 0.75rem;
 }
@@ -175,12 +182,6 @@ article pre:hover + .btn-clipboard {
     opacity: 1;
 }
 
-/*鼠标滑过复制按钮的时候复制按钮的样式*/
-.btn-clipboard:hover {
-    opacity: 1;
-    background: #007bff;
-}
-
 /*上下篇文章字体大小*/
 #prePost, #nextPost {
     font-size: 1.2rem;
@@ -199,11 +200,6 @@ article pre:hover + .btn-clipboard {
     text-align: center;
     line-height: 2rem;
     border-radius: 1rem;
-}
-
-/*文章中的a标签划过变为红色*/
-#content article h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-    color: #dc3545;
 }
 
 /*标签项盒子的样式*/

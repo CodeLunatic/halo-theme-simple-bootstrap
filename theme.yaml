@@ -12,11 +12,11 @@
 # 详情请参考：https://halo.run/develop/theme.html#theme-yaml
 
 id: codelunatic_simple
-name: Simple BootStrap
+name: Simple Bootstrap
 author:
   name: CY
   website: https://halo.cyblogs.top
-description: 使用BootStrap构建的简洁主题
+description: 使用Bootstrap构建的简洁主题
 logo:
 website: https://halo.cyblogs.top
 repo: https://github.com/codelunatic/halo-theme-simple-bootstrap

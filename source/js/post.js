@@ -12,10 +12,12 @@
  *  Status: OK
  */
 $(function () {
+
     /**
      * 阅读进度（阅读进度条和目录高亮功能）
      */
     function readProgress() {
+
         // 文章内容
         let $content = $("#content");
         // 阅读进度条
@@ -62,10 +64,10 @@ $(function () {
                     positionTop >= catalogsContainerHeight && $catalogs.animate({ // 向下滚动滚动条
                         scrollTop: $catalogs.scrollTop() + catalogsContainerHeight
                     }, 300);
-                    link.addClass("text-danger");
+                    link.addClass("catalog-active");
                     return;
                 }
-                link.removeClass("text-danger");
+                link.removeClass("catalog-active");
             });
             lastReadTitleIndex = readTitleIndex;
         };
@@ -84,13 +86,13 @@ $(function () {
         };
 
         // 改变阅读进度条
-        changeReadProgress();
+        displayReadProgress && changeReadProgress();
         // 目录的进度（高亮）
         changeCatalogProgress();
 
         $(window).on('scroll', function () {
             // 改变阅读进度条
-            changeReadProgress();
+            displayReadProgress && changeReadProgress();
             // 目录的进度（高亮）
             changeCatalogProgress();
         });
@@ -102,7 +104,12 @@ $(function () {
     let addLineNumber = (codeSelector) => {
         $(codeSelector).each(function () {
             let lis = $(this).html().trimRight().split("\n")
-                .map(value => `<li>${value}</li>`).join('');
+                .map((value, index, array) => {
+                    let lineDigit = String(array.length).length;
+                    if (lineDigit === 1) lineDigit = 2;
+                    // 修复复制时没有空行的问题
+                    return `<li class="line-number" data-line-number="${String(index + 1).padStart(lineDigit, 0)}">${(value && value.trim()) ? value : '<br>'}</li>`
+                }).join('');
             $(this).html(`<ol>${lis}</ol>`);
         });
     };
@@ -176,8 +183,10 @@ $(function () {
     let displayCodeFormat = (codeSelector) => {
         $(codeSelector).each(function () {
             let languages = $(this).attr("class").split(' ').filter((value) => value && value.trim() && value.startsWith("language"));
+            let language = languages.length && languages[0].substring(9) || '';
+            language = language && `${language[0].toUpperCase()}${language.slice(1)}`;
             $(this).parent().wrap(
-                `<div class='code-format' data-code-format="${languages.length && languages[0].substring(9) || ''}"></div>`
+                `<div class='code-format' data-code-format="${language}"></div>`
             );
         });
     };
@@ -220,7 +229,7 @@ $(function () {
         // 开启ToolTip
         $('[data-toggle="tooltip"]').tooltip();
 
-        var clipboard = new ClipboardJS('.btn-clipboard');
+        let clipboard = new ClipboardJS('.btn-clipboard');
         clipboard.on('success', function (e) {
             e.clearSelection();
             e.trigger && $(e.trigger).attr("data-original-title", "已复制到剪切板").tooltip('show');
@@ -232,34 +241,109 @@ $(function () {
     };
 
     /**
+     * 手机目录触摸隐藏
+     * @param catalogContainer 手机目录容器
+     */
+    let mobileCatalogTouchMove = (catalogContainer) => {
+
+        let startPageX; // 记录用户横向滑动目录时的开始位置
+        let startPageY; // 记录用户纵向滑动目录时的开始位置
+        let moveXRatio; // X方向移动的长度占屏幕长度的比例
+
+        // 开始触摸
+        catalogContainer.on("touchstart", function (event) {
+            startPageX = event.touches[0].pageX; // 记录X开始的位置
+            startPageY = event.touches[0].pageY; // 记录Y开始的位置
+        });
+
+        // 正在触摸
+        catalogContainer.on("touchmove", function (event) {
+            let moveXLength = event.touches[0].pageX - startPageX; // X相对于开始的位置移动了多少
+            let moveYLength = event.touches[0].pageY - startPageY; // Y相对于开始的位置移动了多少
+            moveXRatio = moveXLength / window.innerWidth; // X移动的长度占屏幕多少
+            if (moveXLength >= 0 && moveXLength > Math.abs(moveYLength)) { // 目录跟随用户触屏横向移动的条件
+                $(this).css({
+                    "right": -moveXRatio * 100 + "%"
+                })
+            }
+        });
+
+        // 触摸结束
+        catalogContainer.on("touchend", function (event) {
+            let time = 100;
+            if (moveXRatio < 0.25) { // 如果移动的比例小于30%
+                $(this).animate({
+                    "right": 0 // 目录归位（照常显示）
+                }, time)
+            } else {
+                $('html').removeClass('no-scroll');
+                $(this).animate({
+                    "right": "-85%" // 目录隐藏
+                }, time, () => $("#catalogOverBox").hide());
+            }
+        });
+    };
+
+    /**
      * 处理手机端目录
      */
     let mobileCatalogControl = () => {
         let time = 300;
         // 目录按钮
-        $("#catalogButton").on("click", function () {
+        let catalogButton = $("#catalogButton");
+        // 目录链接
+        let link = $("[data-catalog-target]");
+        // 目录后的蒙版
+        let catalogOverBox = $("#catalogOverBox");
+        // 目录按钮
+        catalogButton.on("click", function () {
+            $('html').addClass('no-scroll');
             $("#catalogBox").animate({right: "0"}, time);
             $("#catalogOverBox").show();
             return false;
         });
         // 目录中的链接
-        $("[data-catalog-target]").on("click", function () {
+        link.on("click", function () {
+            $('html').removeClass('no-scroll');
             $("#catalogBox").css({right: "-85%"});
             $("#catalogOverBox").hide();
         });
         // 点击目录后的蒙版
-        $("#catalogOverBox").click('on', function () {
+        catalogOverBox.on('click', function () {
+            $('html').removeClass('no-scroll');
             $("#catalogBox").animate({right: "-85%"}, time, () => {
                 $(this).hide();
             });
             return false;
         });
+        // 禁止蒙版触摸滑动
+        catalogOverBox.on('touchmove', function (event) {
+            event.preventDefault();
+        });
+        // 禁止蒙版鼠标滚轮
+        catalogOverBox.on('mousewheel', function (event) {
+            event.preventDefault();
+        });
+        mobileCatalogTouchMove($("#catalogBox"));
     };
 
     // 初始化处理，在新标签中打开页面
-    linkOnBlackPage && $("#content a").each(function () {
+    linkOnBlackPage && $("#content a").filter(function () {
+        let isLinkToCurrentPage = $(this).attr("href").startsWith("#");
+        // 给每个链接到当前页面的链接一个点击事件，通过动画滚动到目标位置
+        isLinkToCurrentPage && $(this).on('click', function () {
+            let title = $(this).attr("href").substr(1);
+            let offsetTop = $(`#${title}`).offset().top - 20;
+            $("html,body").animate({scrollTop: offsetTop}, 300);
+            // 不能阻止a标签的默认行为，因为需要配合地址栏实现分享链接后的锚点
+            // 浏览器首次加载的时候才会定位锚点，刷新的时候页面位置不会改变，并且还会提示下面信息
+            // Autofocus processing was blocked because a document's URL has a fragment '#锚点信息'.
+        });
+        return !isLinkToCurrentPage;
+    }).each(function () {
         $(this).attr("target", "_blank");
     });
+
     // 1、代码前面加入行号
     displayLineNumber && addLineNumber("pre code");
     // 2、生成文章的目录
@@ -283,5 +367,5 @@ $(function () {
     };
     enableShare && socialShare('.social-share-cs', $config);
     // 8、搞一个阅读进度，为了提高准确度，数据都要实时获取
-    displayReadProgress && readProgress();
+    readProgress();
 });
