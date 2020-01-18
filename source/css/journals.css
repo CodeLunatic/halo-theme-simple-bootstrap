@@ -1,0 +1,52 @@
+/*
+日志界面的样式
+Status: OK
+ */
+/*用户头像*/
+.journals .journal-item .journal-header .user-avatar {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+
+/*日志内容*/
+.journals .journal-item .journal-content {
+    line-height: 1.8rem;
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/*所有的iframe全屏幕显示*/
+.journals .journal-item .journal-content iframe,
+.journals .journal-item .journal-content audio,
+.journals .journal-item .journal-content video {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+/*单个图片的问题处理*/
+.journals .journal-item .journal-content img {
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+/*内容盒子里面的图片正方形显示*/
+.journals .journal-item .journal-content .picture {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-size: cover;
+}
+
+/*用户的操作链接颜色*/
+.journals .journal-item .journal-operation a {
+    color: #6c757d !important;
+}
+
+/*导航栏固定*/
+#navBar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+}

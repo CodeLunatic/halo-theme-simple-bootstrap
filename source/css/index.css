@@ -1,0 +1,188 @@
+/*
+主页的样式
+Status: OK
+ */
+/*列表项的总样式*/
+.list-item {
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/*这里的定位后期标签过多的时候可能会出现问题*/
+#tags {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 2rem;
+}
+
+/*标签中的卡片的高度*/
+#tags .card {
+    max-height: 90vh;
+}
+
+/*目录超出盒子的处理*/
+#tags .card .card-body {
+    overflow-y: auto;
+}
+
+/*一个标签项的样式*/
+.tag {
+    display: inline-block;
+    margin-right: .3rem;
+    margin-top: .6rem;
+    margin-bottom: .6rem;
+    font-size: .85rem;
+    color: #4a4a4a;
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/*标签项中的a标签划过效果*/
+.tag a:hover {
+    font-weight: bold;
+}
+
+/*标签项的左半部分*/
+.tag .tag-left {
+    border: 1px solid #d6d6d6;
+    border-radius: .25rem 0 0 .25rem;
+    padding: .25rem .5rem;
+    background: #f5f5f5 !important;
+    margin-right: 0;
+}
+
+/*标签项的右半部分*/
+.tag .tag-right {
+    border: 1px solid #d6d6d6;
+    border-left: none;
+    border-radius: 0 .25rem .25rem 0;
+    padding: .25rem .5rem;
+    margin-left: -.52rem;
+    background: #e7e7e7 !important;
+    /*font-weight: bold;*/
+}
+
+/*文章摘要的样式*/
+.post-summary {
+    line-height: 2.2rem;
+    overflow: hidden;
+}
+
+.thumbnail-img {
+    height: auto;
+}
+
+.thumbnail-img-lg {
+    display: none;
+}
+
+.thumbnail-img-sm {
+    display: none;
+}
+
+/*最小屏幕*/
+@media (min-width: 320px) {
+
+    small.custom-small-mt {
+        margin-top: 1.2rem !important;
+    }
+
+    .h4, h4 {
+        font-size: 1.2rem;
+    }
+
+    .post-summary {
+        max-height: 100px;
+    }
+}
+
+/*中屏手机*/
+@media (min-width: 375px) {
+
+    .thumbnail-img-sm {
+        display: block;
+    }
+
+    .post-summary {
+        max-height: 68px;
+    }
+
+    .thumbnail-img {
+        max-height: 68px;
+    }
+}
+
+/* 大屏手机 */
+@media (min-width: 425px) {
+
+    .post-summary {
+        max-height: 106px;
+    }
+
+    .thumbnail-img {
+        max-height: 88px;
+    }
+
+    small.custom-small-mt {
+        margin-top: 1rem !important;
+    }
+}
+
+/*特大屏手机*/
+@media (min-width: 576px) {
+
+    small.custom-small-mt {
+        margin-top: 1.2rem !important;
+    }
+
+    .thumbnail-img {
+        max-height: 88px;
+    }
+}
+
+/*平板*/
+@media (min-width: 768px) {
+
+    .h4, h4 {
+        font-size: 1.5rem;
+    }
+
+    .thumbnail-img-lg {
+        max-height: 146px;
+        display: block;
+    }
+
+    .thumbnail-img-sm {
+        display: none;
+    }
+}
+
+/*微型电脑*/
+@media (min-width: 992px) {
+
+    .thumbnail-img-lg {
+        max-height: 160px;
+    }
+}
+
+/*其他电脑*/
+@media (min-width: 1200px) {
+
+    #left {
+        margin-top: -.5rem;
+    }
+
+    #left div[role=alert] {
+        margin-top: 2rem !important;
+    }
+
+    div.article-title {
+        margin-top: .5rem;
+    }
+
+    small.custom-small-mt {
+        margin-top: 1.5rem !important;
+    }
+
+    .thumbnail-img-lg {
+        max-height: 132px;
+    }
+}

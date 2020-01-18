@@ -1,0 +1,154 @@
+/*
+archives、tags、categories界面的样式
+Status: OK
+ */
+/*列表盒子总样式*/
+ul.title-list {
+    list-style: none;
+    position: relative;
+    z-index: 0;
+}
+
+/*列表盒子前面的线*/
+ul.title-list:before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: -2rem;
+    bottom: -1rem;
+    border-left: 2px solid rgba(27, 31, 35, .15);
+}
+
+/*列表盒子的每一项的样式*/
+ul.title-list li {
+    line-height: 3rem;
+    padding-left: .8rem;
+    position: relative;
+    z-index: 10;
+}
+
+/*列表盒子每一项前面的圆圈*/
+ul.title-list li:before {
+    content: '';
+    position: absolute;
+    left: -2.02rem;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background: #ffffff;
+    border: 2px solid rgba(27, 31, 35, .15);
+    border-radius: 50%;
+}
+
+/*列表盒子中每一个a标签的样式*/
+ul.title-list li a {
+    color: #586069;
+}
+
+/*用户头像样式*/
+.user-avatar {
+    margin-left: -0.3rem;
+    position: relative;
+    z-index: 5;
+}
+
+/*每一个整体列表中的字体*/
+.title-list-item {
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* 对话盒子的样式 */
+.dialogue-box {
+    margin-left: 1rem;
+    padding: 0 1rem;
+    max-width: 100%;
+    color: #586069;
+    border: 1px solid rgba(27, 31, 35, .15);
+    height: 2.8rem;
+    background: #f6f8fa;
+    position: relative;
+}
+
+/* 对话盒子前面的小尖 */
+.dialogue-box:before {
+    content: '';
+    position: absolute;
+    left: -.43rem;
+    top: .8rem;
+    width: .75rem;
+    height: .75rem;
+    background: #f6f8fa;
+    border-left: 1px solid rgba(27, 31, 35, .15);
+    border-bottom: 1px solid rgba(27, 31, 35, .15);
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -moz-transform: rotate(45deg); /* Firefox */
+    -webkit-transform: rotate(45deg); /* Safari 和 Chrome */
+    -o-transform: rotate(45deg); /* Opera */
+}
+
+/*对话盒子中的字体大小*/
+.dialogue-box h3 {
+    font-size: 1rem;
+    line-height: 2.8rem;
+}
+
+/*导航盒子默认隐藏*/
+#navigation {
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: none;
+}
+
+/*导航盒子中的链接默认样式*/
+#navigationList a {
+    color: #333333;
+}
+
+/*大于LG的时候*/
+@media (min-width: 992px) {
+
+    /*导航盒子*/
+    #navigation {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 2rem;
+    }
+
+    /*导航盒子的高度*/
+    #navigation .card {
+        max-height: 90vh;
+    }
+
+    /*目录超出盒子的处理*/
+    #navigationList {
+        overflow-y: auto;
+    }
+}
+
+/*宽度在SM以下*/
+@media (max-width: 576px) {
+
+    /*一个文章标题的样式*/
+    ul.title-list li {
+        margin-top: .5rem;
+        line-height: 1.5rem;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+/*宽度在LG以下左右盒子调换顺序*/
+@media (max-width: 992px) {
+
+    /*左边的盒子*/
+    #left {
+        margin-top: 2rem;
+        order: 1;
+    }
+
+    /*右边的盒子*/
+    #right {
+        margin-top: -1rem;
+        order: 0;
+    }
+}

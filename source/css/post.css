@@ -1,0 +1,228 @@
+/*
+文章界面的样式
+Status: OK
+ */
+/*代码行号总样式*/
+article pre code ol {
+    list-style: decimal;
+    margin: 0 0 0 .2rem !important;
+    padding: 0;
+}
+
+/*代码行号样式*/
+article pre code ol li {
+    list-style: none;
+    /*list-style: decimal-leading-zero;*/
+    border-left: 1px solid #ddd !important;
+    padding: 0 0.5rem 0 0.5rem !important;
+    margin: 0 !important;
+    line-height: 1.2rem;
+    word-break: keep-all;
+    position: relative;
+}
+
+/* 自定义行号样式 */
+article pre code ol li:before {
+    position: absolute;
+    text-align: right;
+    content: attr(data-line-number);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    width: 1.5rem;
+    left: -2.28rem;
+    top: 0;
+}
+
+/*阅读进度样式*/
+#readProgress {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+/*修复移动端英文标题过长不换行的问题*/
+#contentTitle {
+    word-break: break-all;
+}
+
+/*页面内容中的小文字（CY 2019年10月03日 807次浏览）*/
+#content small, #recommend, #changePost, #contentTitle, #breadcrumb .active, #catalogs {
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/*所有的Iframe全宽度显示*/
+#content iframe {
+    width: 100%;
+}
+
+/*目录盒子固定*/
+#catalogBox {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 2rem;
+}
+
+/*目录卡片的高度*/
+#catalogBox .card {
+    max-height: 90vh;
+}
+
+/*目录超出盒子的处理*/
+#catalogs {
+    overflow-y: auto;
+}
+
+/*LG宽度以下样式*/
+@media (max-width: 992px) {
+
+    /*目录盒子*/
+    #catalogBox {
+        position: fixed;
+        z-index: 40;
+        width: 85%;
+        right: -85%;
+        top: 0;
+    }
+
+    /*目录卡片*/
+    #catalogBox .card {
+        max-height: 100vh;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+    }
+
+    /*目录蒙版，初始化隐藏*/
+    #catalogOverBox {
+        display: none;
+        position: fixed;
+        z-index: 30;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, .6);
+    }
+}
+
+/*目录行高*/
+#catalogs p {
+    line-height: 1rem;
+}
+
+/*目录的链接样式*/
+#catalogs p a {
+    color: #333333;
+    text-decoration: none;
+    position: relative;
+}
+
+/*目录链接前面的修饰*/
+#catalogs p a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -.2rem;
+    left: -1.125rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-left: 1px solid #e7e7eb;
+    border-bottom: 1px solid #e7e7eb;
+}
+
+/*目录链接前面的修饰*/
+#catalogs p a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.5500rem;
+    left: -1.125rem;
+    height: 1.25rem;
+    width: 0.75rem;
+    border-left: 1px solid #e7e7eb;
+}
+
+/*代码格式*/
+.code-format {
+    position: relative;
+}
+
+/*代码格式after*/
+.code-format:after {
+    position: absolute;
+    z-index: 10;
+    content: attr(data-code-format);
+    top: 0;
+    right: .375rem;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: #999999;
+    font-size: 0.75rem;
+}
+
+/*复制按钮*/
+.btn-clipboard {
+    opacity: 0;
+    position: absolute;
+    background: #6c757d;
+    z-index: 10;
+    bottom: -0.3rem;
+    right: -0.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    padding: 0;
+    color: #ffffff;
+    border: none;
+}
+
+/*鼠标滑过pre标签的时候复制按钮的样式*/
+article pre:hover + .btn-clipboard {
+    opacity: 1;
+}
+
+/*上下篇文章字体大小*/
+#prePost, #nextPost {
+    font-size: 1.2rem;
+}
+
+/*目录按钮样式*/
+#catalogButton {
+    position: fixed;
+    z-index: 20;
+    bottom: 4.5rem;
+    right: .5rem;
+    background: rgba(0, 0, 0, .4);
+    width: 2rem;
+    height: 2rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2rem;
+    border-radius: 1rem;
+}
+
+/*标签项盒子的样式*/
+.tag {
+    display: inline-block;
+    margin-right: .3rem;
+    margin-top: .6rem;
+    margin-bottom: .6rem;
+    font-size: .85rem;
+    color: #4a4a4a;
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/*标签项中的a标签的划过效果*/
+.tag a:hover {
+    font-weight: bold;
+}
+
+/*标签项的文字的样式*/
+.tag .tag-item {
+    border: 1px solid #d6d6d6;
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+    background: #f5f5f5 !important;
+    margin-right: 0;
+}

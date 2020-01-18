@@ -1,0 +1,54 @@
+/*
+链接界面的样式
+Status: OK
+ */
+/*链接分类和链接的默认字体颜色*/
+#linkBox {
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#linkCategory .category-button, .link-grid .link {
+    color: #333;
+}
+
+/*链接盒子*/
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+}
+
+/*XL宽度以下的样式*/
+@media (max-width: 1200px) {
+    .link-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/*MD宽度以下的样式*/
+@media (max-width: 768px) {
+    .link-grid {
+        grid-template-columns: 100% !important;
+        column-gap: 0 !important;
+    }
+}
+
+/* 宽度在MD以上 */
+@media (min-width: 768px) {
+    /*导航盒子*/
+    #linkCategory {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 2rem;
+    }
+
+    /*导航盒子的高度*/
+    #linkCategory .card {
+        max-height: 90vh;
+    }
+
+    /*目录超出盒子的处理*/
+    #linkCategoryList {
+        overflow-y: auto;
+    }
+}
