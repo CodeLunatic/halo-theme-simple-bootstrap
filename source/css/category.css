@@ -1,0 +1,10 @@
+/*
+分类界面样式
+Status: OK
+ */
+/*分类描述样式，模仿Github中MarkDown的引用样式*/
+.category-description {
+    border-left: 0.25em solid #dfe2e5;
+    line-height: 2rem;
+    padding: 0 1rem;
+}

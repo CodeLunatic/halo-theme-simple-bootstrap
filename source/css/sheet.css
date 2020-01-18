@@ -1,0 +1,15 @@
+/*
+自定义页面的样式
+Status: OK
+ */
+/*图片响应式的支持*/
+#content img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/*左侧更换字体*/
+#left {
+    font-family: "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
