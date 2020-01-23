@@ -109,7 +109,7 @@
             </style>
         </#if>
         <#--日志界面的样式-->
-        <#if is_journal??>
+        <#if is_journal?? || is_journals??>
             <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
             <link rel="stylesheet" href="${static!}/source/css/journals.css">
             <style>
@@ -285,7 +285,7 @@
         <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/yaml.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </#if>
-    <#if is_journal??>
+    <#if is_journal?? || is_journals??>
         <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="${static!}/source/js/journals.js"></script>
     </#if>
