@@ -66,15 +66,12 @@ Status: OK
     overflow: hidden;
 }
 
-.thumbnail-img {
-    height: auto;
-}
-
-.thumbnail-img-lg {
+/*屏幕小于320px的时候*/
+.thumbnail-img-sm {
     display: none;
 }
 
-.thumbnail-img-sm {
+.thumbnail-img-lg {
     display: none;
 }
 
@@ -99,13 +96,12 @@ Status: OK
 
     .thumbnail-img-sm {
         display: block;
+        margin-top: -.2rem;
+        width: 108px;
+        height: 60px;
     }
 
     .post-summary {
-        max-height: 68px;
-    }
-
-    .thumbnail-img {
         max-height: 68px;
     }
 }
@@ -117,8 +113,10 @@ Status: OK
         max-height: 106px;
     }
 
-    .thumbnail-img {
-        max-height: 88px;
+    .thumbnail-img-sm {
+        margin-top: -.35rem;
+        width: 158px;
+        height: 88px;
     }
 
     small.custom-small-mt {
@@ -133,8 +131,9 @@ Status: OK
         margin-top: 1.2rem !important;
     }
 
-    .thumbnail-img {
-        max-height: 88px;
+    .thumbnail-img-sm {
+        width: 158px;
+        height: 88px;
     }
 }
 
@@ -145,13 +144,14 @@ Status: OK
         font-size: 1.5rem;
     }
 
-    .thumbnail-img-lg {
-        max-height: 146px;
-        display: block;
-    }
-
     .thumbnail-img-sm {
         display: none;
+    }
+
+    .thumbnail-img-lg {
+        display: block;
+        width: 263px;
+        height: 146px;
     }
 }
 
@@ -159,7 +159,8 @@ Status: OK
 @media (min-width: 992px) {
 
     .thumbnail-img-lg {
-        max-height: 160px;
+        width: 288px;
+        height: 160px;
     }
 }
 
@@ -183,6 +184,7 @@ Status: OK
     }
 
     .thumbnail-img-lg {
-        max-height: 132px;
+        width: 238px;
+        height: 132px;
     }
 }
