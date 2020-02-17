@@ -22,9 +22,9 @@
         <meta name="site" content="${context!}"/>
 
         <#--BootStrap CSS-->
-        <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous">
         <#--Font Awesome 图标库-->
-        <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
         <#--主页添加的CSS-->
         <#if is_index?? || is_search?? || is_category?? || is_tag?? || is_sheet??>
             <link rel="stylesheet" href="${static!}/source/css/index.css">
@@ -69,10 +69,10 @@
             <link rel="stylesheet" href="${static!}/source/css/github-markdown.css">
             <link rel="stylesheet" href="${static!}/source/css/post.css">
         <#--代码高亮用到的CSS-->
-            <link href="${settings.code_css_url?default('https://cdn.bootcss.com/highlight.js/9.15.10/styles/github.min.css')}"
+            <link href="${settings.code_css_url?default('https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/github.min.css')}"
                   rel="stylesheet">
-            <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
-            <link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" integrity="sha256-0EDwznjUTDEicOuZhOL03fpflUqzhkByvhwol8YGkp4=" crossorigin="anonymous">
             <style>
 
                 article pre code {
@@ -110,7 +110,7 @@
         </#if>
         <#--日志界面的样式-->
         <#if is_journal?? || is_journals??>
-            <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
             <link rel="stylesheet" href="${static!}/source/css/journals.css">
             <style>
                 /*用户的操作链接划过颜色*/
@@ -121,7 +121,7 @@
         </#if>
         <#if is_sheet??>
             <link rel="stylesheet" href="${static!}/source/css/sheet.css">
-            <link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" integrity="sha256-0EDwznjUTDEicOuZhOL03fpflUqzhkByvhwol8YGkp4=" crossorigin="anonymous">
         </#if>
         <#--页面公用的CSS-->
         <link rel="stylesheet" href="${static!}/source/css/style.css">
@@ -170,9 +170,9 @@
     <#nested>
 
     <!-- 公共BootStrap支持使用的JavaScript -->
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha256-/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
 
     <#-- 公共底部代码，包含：统计代码，底部信息 -->
     <#include "footer.ftl">
@@ -208,11 +208,11 @@
             // 表格响应式
             $("table").wrap(`<div class="table-responsive"></div>`);
         </script>
-        <script src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js" integrity="sha256-fGPu+icKh985TLPhO2v68U7i0CW0dE4kiR06RN4O6jo=" crossorigin="anonymous"></script>
     </#if>
     <#if is_post??>
-        <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
-        <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="${static!}/source/js/post.js"></script>
     <#--代码高亮库-->
     <#--官方库的语言种类目前有185种
@@ -231,62 +231,62 @@
     tcl、tex、thrift、tp、twig、typescript、vala、vbnet、vbscript-html、vbscript、verilog、vhdl、vim、x86asm、xl、
     xml、xquery、yaml、zephir
     -->
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/accesslog.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/actionscript.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/apache.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/aspectj.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/awk.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/bash.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/basic.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/coffeescript.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/cpp.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/css.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/delphi.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/django.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dns.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dos.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/erlang-repl.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/erlang.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/gradle.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/groovy.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/http.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/ini.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/java.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/javascript.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/json.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/kotlin.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/less.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/lua.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/markdown.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/nginx.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/objectivec.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/perl.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/php.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/plaintext.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/powershell.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/properties.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/python.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/ruby.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/scala.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/scheme.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/scss.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/shell.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/smali.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/sql.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/swift.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/typescript.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/vbscript.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/vim.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/xml.min.js"></script>
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/accesslog.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/actionscript.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/apache.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/aspectj.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/awk.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/bash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/basic.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/coffeescript.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/cpp.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/css.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/delphi.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/django.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dns.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dockerfile.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dos.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/erlang-repl.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/erlang.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/go.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/gradle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/groovy.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/http.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/ini.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/java.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/javascript.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/json.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/kotlin.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/less.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/lua.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/markdown.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/nginx.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/objectivec.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/perl.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/php.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/plaintext.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/powershell.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/properties.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/python.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/ruby.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/scala.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/scheme.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/scss.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/shell.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/smali.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/sql.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/swift.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/typescript.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/vbscript.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/vim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/xml.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/yaml.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </#if>
     <#if is_journal?? || is_journals??>
-        <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="${static!}/source/js/journals.js"></script>
     </#if>
     <#if is_sheet??>

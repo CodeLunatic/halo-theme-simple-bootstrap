@@ -4,7 +4,7 @@
 keywords="${options.seo_keywords!}"
 description="${options.seo_description!}">
     <link rel="stylesheet" href="${static!}/source/css/photos.css">
-    <link href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 <#--所有的图片先加载到这个位置，但是这个位置默认隐藏的-->
     <#include "module/photos/photo_item.ftl"/>
     <@photoTag method="list">
@@ -27,5 +27,5 @@ description="${options.seo_description!}">
         </#if>
     </@photoTag>
 </@layout>
-<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 <script src="${static!}/source/js/photos.js"></script>
