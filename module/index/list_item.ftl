@@ -7,9 +7,9 @@
 <#--一个列表项-->
     <div class="list-item px-1 py-xl-4 py-3 mt-xl-0 mt-3 border-bottom">
 
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
 
-            <div class="mr-auto">
+            <div>
                 <#--文章标题-->
                 <div class="article-title">
                     <#--文章标题-->
@@ -19,6 +19,7 @@
                         </h4>
                     </a>
                 </div>
+
                 <#--文章摘要-->
                 <div class="d-flex align-items-center mt-xl-4 mt-3">
                     <#--小屏幕缩略图-->
@@ -29,6 +30,7 @@
                     <#--文章摘要-->
                     <div class="post-summary d-block text-muted text-break">${post.summary!}</div>
                 </div>
+
                 <#--文章概况-->
                 <@articleProfiles post=post/>
             </div>

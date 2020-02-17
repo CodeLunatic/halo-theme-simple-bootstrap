@@ -95,10 +95,10 @@ Status: OK
 @media (min-width: 375px) {
 
     .thumbnail-img-sm {
-        display: block;
-        margin-top: -.2rem;
-        width: 108px;
-        height: 60px;
+        display: block !important;
+        margin-top: -.2rem !important;
+        width: 108px !important;
+        height: 60px !important;
     }
 
     .post-summary {
@@ -114,9 +114,9 @@ Status: OK
     }
 
     .thumbnail-img-sm {
-        margin-top: -.35rem;
-        width: 158px;
-        height: 88px;
+        margin-top: -.35rem !important;
+        width: 158px !important;
+        height: 88px !important;
     }
 
     small.custom-small-mt {
@@ -132,8 +132,8 @@ Status: OK
     }
 
     .thumbnail-img-sm {
-        width: 158px;
-        height: 88px;
+        width: 158px !important;
+        height: 88px !important;
     }
 }
 
@@ -145,13 +145,13 @@ Status: OK
     }
 
     .thumbnail-img-sm {
-        display: none;
+        display: none !important;
     }
 
     .thumbnail-img-lg {
-        display: block;
-        width: 263px;
-        height: 146px;
+        display: block !important;
+        width: 263px !important;
+        height: 146px !important;
     }
 }
 
@@ -159,8 +159,8 @@ Status: OK
 @media (min-width: 992px) {
 
     .thumbnail-img-lg {
-        width: 288px;
-        height: 160px;
+        width: 288px !important;
+        height: 160px !important;
     }
 }
 
@@ -184,7 +184,7 @@ Status: OK
     }
 
     .thumbnail-img-lg {
-        width: 238px;
-        height: 132px;
+        width: 238px !important;
+        height: 132px !important;
     }
 }
