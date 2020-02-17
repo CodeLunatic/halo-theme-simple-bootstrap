@@ -69,7 +69,7 @@
             <link rel="stylesheet" href="${static!}/source/css/github-markdown.css">
             <link rel="stylesheet" href="${static!}/source/css/post.css">
         <#--代码高亮用到的CSS-->
-            <link href="${settings.code_css_url?default('https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/github.min.css')}"
+            <link href="${settings.code_css_url?default('https://cdn.staticfile.org/highlight.js/9.18.1/styles/github.min.css')}"
                   rel="stylesheet">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" integrity="sha256-0EDwznjUTDEicOuZhOL03fpflUqzhkByvhwol8YGkp4=" crossorigin="anonymous">
@@ -231,58 +231,58 @@
     tcl、tex、thrift、tp、twig、typescript、vala、vbnet、vbscript-html、vbscript、verilog、vhdl、vim、x86asm、xl、
     xml、xquery、yaml、zephir
     -->
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/highlight.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/accesslog.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/actionscript.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/apache.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/aspectj.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/awk.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/bash.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/basic.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/coffeescript.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/cpp.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/css.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dart.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/delphi.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/django.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dns.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dockerfile.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/dos.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/erlang-repl.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/erlang.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/go.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/gradle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/groovy.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/http.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/ini.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/java.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/javascript.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/json.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/kotlin.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/less.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/lua.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/markdown.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/nginx.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/objectivec.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/perl.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/php.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/plaintext.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/powershell.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/properties.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/python.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/ruby.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/scala.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/scheme.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/scss.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/shell.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/smali.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/sql.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/swift.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/typescript.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/vbscript.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/vim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/xml.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/languages/yaml.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/highlight.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/accesslog.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/actionscript.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/apache.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/aspectj.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/awk.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/bash.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/basic.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/coffeescript.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/cpp.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/css.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/dart.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/delphi.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/django.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/dns.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/dockerfile.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/dos.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/erlang-repl.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/erlang.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/go.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/gradle.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/groovy.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/http.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/ini.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/java.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/javascript.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/json.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/kotlin.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/less.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/lua.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/markdown.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/nginx.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/objectivec.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/perl.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/php.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/plaintext.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/powershell.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/properties.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/python.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/ruby.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/scala.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/scheme.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/scss.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/shell.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/smali.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/sql.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/swift.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/typescript.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/vbscript.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/vim.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/xml.min.js"></script>
+        <script src="https://cdn.staticfile.org/highlight.js/9.18.1/languages/yaml.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </#if>
     <#if is_journal?? || is_journals??>

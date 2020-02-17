@@ -171,7 +171,7 @@ code:
       name: code_css_url
       label: 代码样式地址
       type: text
-      default: 'https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/github.min.css'
+      default: 'https://cdn.staticfile.org/highlight.js/9.18.1/styles/github.min.css'
       placeholder: '代码样式地址'
     code_font_family:
       name: code_font_family
