@@ -34,7 +34,7 @@
 
             <#--大屏幕缩略图-->
             <#if (post.thumbnail)?? && post.thumbnail?trim != ''>
-                <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="ml-3 thumbnail-img-lg shadow rounded-lg"></i>
+                <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="ml-3 thumbnail-img-lg shadow-sm rounded-lg"></i>
             </#if>
         </div>
     </div>
