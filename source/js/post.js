@@ -206,7 +206,9 @@ $(function () {
             $(this).wrap( // 为图片包裹一个链接，使得fancybox.js可以使用
                 `<a href="${$(this).prop('src')}" data-fancybox="images" data-caption="${$(this).prop("alt")}"></a>`
             ).after( // 在图片下面添加一个解释说明
-                `<p class='text-center text-muted pt-3'>${$(this).prop("alt")}</p>`
+                () => {
+                    return $(this).prop("alt") !==""?`<p class='text-center text-muted pt-3'>${$(this).prop("alt")}</p>`:``
+                }
             );
         });
         // 为fancybox.js做配置
