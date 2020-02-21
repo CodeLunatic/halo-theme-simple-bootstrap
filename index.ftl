@@ -8,7 +8,7 @@ description="${options.seo_description!}">
         <#--左右两列盒子-->
         <div class="row mb-3">
             <#--左边的盒子-->
-            <div id="left" class="col-xl-8 pr-xl-5 pt-xl-4 pt-0">
+            <div id="left" class="col-xl-8 pr-xl-5 pt-xl-3 pt-0">
                 <#include "module/index/left.ftl">
             </div>
             <#--右边的信息-->

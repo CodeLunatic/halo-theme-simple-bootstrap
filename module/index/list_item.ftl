@@ -4,31 +4,28 @@
 <#--主页的一个文章列表项ok-->
 <#macro listItem post>
 
-<#--一个列表项-->
-    <div class="list-item px-1 py-xl-4 py-3 mt-xl-0 mt-3 border-bottom">
+    <#--一个列表项-->
+    <div class="list-item border-bottom py-2">
 
         <div class="d-flex align-items-center justify-content-between">
 
-            <div>
+            <div class="item-left d-flex flex-column" style="justify-content: space-evenly;">
+
                 <#--文章标题-->
-                <div class="article-title">
-                    <#--文章标题-->
-                    <a href="/archives/${post.url!}" class="text-body">
-                        <h4 class="post-title font-weight-bold text-break">
-                            ${post.title!}
-                        </h4>
-                    </a>
-                </div>
+                <a href="/archives/${post.url!}" class="text-body">
+                    <h4 class="p-0 m-0 font-weight-bold text-break">
+                        ${post.title!}
+                    </h4>
+                </a>
 
                 <#--文章摘要-->
-                <div class="d-flex align-items-center mt-xl-4 mt-3">
+                <div class="d-flex align-items-center">
                     <#--小屏幕缩略图-->
                     <#if (post.thumbnail)?? && post.thumbnail?trim != ''>
-                        <img src="${post.thumbnail!}" class="mr-3 thumbnail-img thumbnail-img-sm"
-                             alt="${post.title!}"/>
+                        <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="mr-3 thumbnail-img-sm shadow-lg rounded-lg"></i>
                     </#if>
                     <#--文章摘要-->
-                    <div class="post-summary d-block text-muted text-break">${post.summary!}</div>
+                    <div class="post-summary text-muted text-break">${post.summary!}</div>
                 </div>
 
                 <#--文章概况-->
@@ -37,8 +34,7 @@
 
             <#--大屏幕缩略图-->
             <#if (post.thumbnail)?? && post.thumbnail?trim != ''>
-                <img src="${post.thumbnail!}" class="ml-3 thumbnail-img thumbnail-img-lg"
-                     alt="${post.title!}"/>
+                <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="ml-3 thumbnail-img-lg shadow-lg rounded-lg"></i>
             </#if>
         </div>
     </div>

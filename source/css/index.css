@@ -78,16 +78,16 @@ Status: OK
 /*最小屏幕*/
 @media (min-width: 320px) {
 
-    small.custom-small-mt {
-        margin-top: 1.2rem !important;
-    }
-
     .h4, h4 {
         font-size: 1.2rem;
     }
 
     .post-summary {
         max-height: 100px;
+    }
+
+    .item-left {
+        height: 220px;
     }
 }
 
@@ -97,12 +97,16 @@ Status: OK
     .thumbnail-img-sm {
         display: block !important;
         margin-top: -.2rem !important;
-        width: 108px !important;
+        width: 100px !important;
         height: 60px !important;
     }
 
     .post-summary {
         max-height: 68px;
+    }
+
+    .item-left {
+        height: 180px;
     }
 }
 
@@ -115,25 +119,25 @@ Status: OK
 
     .thumbnail-img-sm {
         margin-top: -.35rem !important;
-        width: 158px !important;
+        width: 146px !important;
         height: 88px !important;
     }
 
-    small.custom-small-mt {
-        margin-top: 1rem !important;
+    .item-left {
+        height: 220px;
     }
 }
 
 /*特大屏手机*/
 @media (min-width: 576px) {
 
-    small.custom-small-mt {
-        margin-top: 1.2rem !important;
+    .thumbnail-img-sm {
+        width: 146px !important;
+        height: 88px !important;
     }
 
-    .thumbnail-img-sm {
-        width: 158px !important;
-        height: 88px !important;
+    .item-left {
+        height: 240px;
     }
 }
 
@@ -150,8 +154,12 @@ Status: OK
 
     .thumbnail-img-lg {
         display: block !important;
-        width: 263px !important;
+        width: 243px !important;
         height: 146px !important;
+    }
+
+    .item-left {
+        height: 240px;
     }
 }
 
@@ -159,8 +167,12 @@ Status: OK
 @media (min-width: 992px) {
 
     .thumbnail-img-lg {
-        width: 288px !important;
+        width: 266px !important;
         height: 160px !important;
+    }
+
+    .item-left {
+        height: 240px;
     }
 }
 
@@ -175,16 +187,12 @@ Status: OK
         margin-top: 2rem !important;
     }
 
-    div.article-title {
-        margin-top: .5rem;
-    }
-
-    small.custom-small-mt {
-        margin-top: 1.5rem !important;
-    }
-
     .thumbnail-img-lg {
-        width: 238px !important;
+        width: 220px !important;
         height: 132px !important;
+    }
+
+    .item-left {
+        height: 240px;
     }
 }
