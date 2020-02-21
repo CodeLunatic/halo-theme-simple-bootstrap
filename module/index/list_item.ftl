@@ -5,7 +5,7 @@
 <#macro listItem post>
 
     <#--一个列表项-->
-    <div class="list-item border-bottom py-2">
+    <div class="list-item border-bottom pt-3">
 
         <div class="d-flex align-items-center justify-content-between">
 
@@ -22,7 +22,7 @@
                 <div class="d-flex align-items-center">
                     <#--小屏幕缩略图-->
                     <#if (post.thumbnail)?? && post.thumbnail?trim != ''>
-                        <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="mr-3 thumbnail-img-sm shadow-lg rounded-lg"></i>
+                        <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="mr-3 thumbnail-img-sm shadow-sm rounded-lg"></i>
                     </#if>
                     <#--文章摘要-->
                     <div class="post-summary text-muted text-break">${post.summary!}</div>
@@ -34,7 +34,7 @@
 
             <#--大屏幕缩略图-->
             <#if (post.thumbnail)?? && post.thumbnail?trim != ''>
-                <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="ml-3 thumbnail-img-lg shadow-lg rounded-lg"></i>
+                <i style="background-image: url('${post.thumbnail!}'); background-size: cover; flex: none;" class="ml-3 thumbnail-img-lg shadow rounded-lg"></i>
             </#if>
         </div>
     </div>
