@@ -10,7 +10,7 @@
         <div class="d-flex flex-column align-items-center mt-5 pt-5">
             <span class="text-muted"><i class="fas fa-inbox fa-7x"></i></span>
             <span class="text-muted mt-4 mb-5">
-                啥都没有找到，到<a class="font-weight-bold" href="${context!}">主页</a>看看吧
+                啥都没有找到，到<a class="font-weight-bold" href="${blog_url!}">主页</a>看看吧
             </span>
         </div>
     <#else>
@@ -30,4 +30,4 @@
 </#list>
 <#--分页-->
 <#include "pagination.ftl">
-<@pagination posts=posts rainbow=rainbow keyword=keyword/>
+<@pagination posts=posts keyword=keyword/>

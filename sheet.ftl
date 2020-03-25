@@ -1,8 +1,6 @@
 <#--自定义界面OK-->
 <#include "module/layout.ftl">
-<@layout title="${sheet.title!} | ${options.blog_title!}"
-keywords="${options.seo_keywords!}"
-description="${options.seo_description!}">
+<@layout title="${sheet.title!} | ${blog_title!}">
 
     <div class="container px-lg-2 py-3 bg-white">
 

@@ -6,7 +6,7 @@
                     <i class="fas fa-tags mr-1"></i>
                     <#list post.tags as tag>
                         <a class="text-body mr-1"
-                           href="/tags/${tag.slugName!}">${tag.name!}</a>
+                           href="${tag.fullPath!}">${tag.name!}</a>
                     </#list>
                 </span>
         </#if>

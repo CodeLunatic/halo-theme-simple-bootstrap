@@ -1,9 +1,7 @@
 <#--相册界面OK-->
 <#include "module/layout.ftl">
-<@layout title="个人相册 | ${options.blog_title!}"
-keywords="${options.seo_keywords!}"
-description="${options.seo_description!}">
-    <link rel="stylesheet" href="${static!}/source/css/photos.css">
+<@layout title="个人相册 | ${blog_title!}">
+    <link rel="stylesheet" href="${theme_base!}/source/css/photos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 <#--所有的图片先加载到这个位置，但是这个位置默认隐藏的-->
     <#include "module/photos/photo_item.ftl"/>
@@ -20,7 +18,7 @@ description="${options.seo_description!}">
                 <div class="d-flex flex-column align-items-center mt-2 pt-5">
                     <span class="text-muted"><i class="fas fa-inbox fa-7x"></i></span>
                     <span class="text-muted mt-4 mb-5">
-                        还没有卡片，回<a class="font-weight-bold" href="${context!}">主页</a>看看吧
+                        还没有卡片，回<a class="font-weight-bold" href="${blog_url!}">主页</a>看看吧
                     </span>
                 </div>
             </div>
@@ -28,4 +26,4 @@ description="${options.seo_description!}">
     </@photoTag>
 </@layout>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-<script src="${static!}/source/js/photos.js"></script>
+<script src="${theme_base!}/source/js/photos.js"></script>

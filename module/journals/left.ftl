@@ -5,13 +5,13 @@
         <@journalItem journal=journal/>
     </#list>
     <#include "pagination.ftl"/>
-    <@pagination journals=journals rainbow=rainbow/>
+    <@pagination journals=journals/>
 <#else>
     <div class="bg-white">
         <div class="d-flex flex-column align-items-center mt-2 pt-5">
             <span class="text-muted"><i class="fas fa-inbox fa-7x"></i></span>
             <span class="text-muted mt-4 mb-5">
-                还没有发布过日志，回<a class="font-weight-bold" href="${context!}">主页</a>看看吧
+                还没有发布过日志，回<a class="font-weight-bold" href="${blog_url!}">主页</a>看看吧
             </span>
         </div>
     </div>

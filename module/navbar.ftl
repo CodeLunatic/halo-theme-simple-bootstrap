@@ -2,12 +2,12 @@
 <section id="navBar" class="border-bottom bg-white">
     <nav class="navbar navbar-expand-lg navbar-light container px-lg-2 py-3">
 
-        <a class="navbar-brand font-weight-bold" href="${context!}">
+        <a class="navbar-brand font-weight-bold" href="${blog_url!}">
             <#if (options.blog_logo)?? && options.blog_logo?trim != ''>
                 <img src="${options.blog_logo!}" width="30" height="30"
-                     class="d-inline-block align-top mr-2" alt="${options.blog_title!}">
+                     class="d-inline-block align-top mr-2" alt="${blog_title!}">
             </#if>
-            ${options.blog_title!}
+            ${blog_title!}
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -44,10 +44,10 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                 <#list categories as categorie>
-                                    <a class="dropdown-item" href="/categories/${categorie.slugName}">${categorie.name}
+                                    <a class="dropdown-item" href="${categorie.fullPath!}">${categorie.name}
                                         (${categorie.postCount!})</a>
                                 </#list>
-                                <a class="dropdown-item" href="/categories">
+                                <a class="dropdown-item" href="${categories_url!}">
                                     全部分类
                                     (<@postTag method="count">
                                         ${count!}

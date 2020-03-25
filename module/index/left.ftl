@@ -9,7 +9,7 @@
     </#list>
 <#--分页-->
     <#include "pagination.ftl">
-    <@pagination posts=posts rainbow=rainbow/>
+    <@pagination posts=posts/>
 
 <#else>
     <div class="bg-white mt-5 mb-4">
