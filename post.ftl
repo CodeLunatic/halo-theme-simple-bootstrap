@@ -1,8 +1,6 @@
 <#--全文展示界面 ok-->
 <#include "module/layout.ftl">
-<@layout title="${post.title!} | ${options.blog_title!}"
-keywords="${options.seo_keywords!}"
-description="${post.title!}">
+<@layout title="${post.title!} | ${blog_title!}">
 
 <#--阅读进度-->
     <#if (settings.open_read_progress)?? && settings.open_read_progress?c == 'true'>

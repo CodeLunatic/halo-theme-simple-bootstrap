@@ -1,52 +1,53 @@
 <#--日志界面分页ok-->
-<#macro pagination journals rainbow>
+<#macro pagination journals>
     <#if journals.getTotalPages() gt 0>
-        <section id="pagination" class="pt-3 d-flex justify-content-center bg-white">
-            <nav aria-label="切换上下页">
-                <ul class="pagination">
-                    <#--上一页部分-->
-                    <li class="page-item <#if journals.number lte 0>disabled</#if>">
-                        <#if journals.number lte 0>
-                            <a class="page-link" href="${context!}/journals/page/1" tabindex="-1"
-                               aria-disabled="true">&laquo;</a>
-                        <#else>
-                            <a class="page-link"
-                               href="${context!}/journals/page/${journals.number}"
-                               aria-label="上一页">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </#if>
-                    </li>
-                    <#--页码部分-->
-                    <#list rainbow as r>
-                        <#if r == journals.number + 1>
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="javascript:void(0)">${journals.number + 1} <span
-                                            class="sr-only">(current)</span></a>
-                            </li>
-                        <#else>
-                            <li class="page-item">
-                                <a href="${context!}/journals/page/${r}"
-                                   class="page-link">${r}
+        <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
+            <section id="pagination" class="pt-3 d-flex justify-content-center bg-white">
+                <nav aria-label="切换上下页">
+                    <ul class="pagination">
+                        <#--上一页部分-->
+                        <li class="page-item <#if !pagination.hasPrev>disabled</#if>">
+                            <#if !pagination.hasPrev>
+                                <a class="page-link" tabindex="-1"
+                                   aria-disabled="true">&laquo;</a>
+                            <#else>
+                                <a class="page-link"
+                                   href="${pagination.prevPageFullPath!}"
+                                   aria-label="上一页">
+                                    <span aria-hidden="true">&laquo;</span>
                                 </a>
-                            </li>
-                        </#if>
-                    </#list>
-                    <#--下一页部分-->
-                    <li class="page-item <#if journals.getTotalPages() lte journals.number + 1>disabled</#if>">
-                        <#if journals.getTotalPages() lte journals.number + 1>
-                            <a class="page-link" href="javascript:void(0)" tabindex="-1"
-                               aria-disabled="true">&raquo;</a>
-                        <#else>
-                            <a class="page-link"
-                               href="${context!}/journals/page/${journals.number + 2}"
-                               aria-label="下一页">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </#if>
-                    </li>
-                </ul>
-            </nav>
-        </section>
+                            </#if>
+                        </li>
+                        <#--页码部分-->
+                        <#list pagination.rainbowPages as number>
+                            <#if number.isCurrent>
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        ${number.page!}
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                            <#else>
+                                <li class="page-item">
+                                    <a class="page-link" href="${number.fullPath!}">${number.page!}</a>
+                                </li>
+                            </#if>
+                        </#list>
+                        <#--下一页部分-->
+                        <li class="page-item <#if !pagination.hasNext>disabled</#if>">
+                            <#if !pagination.hasNext>
+                                <a class="page-link" href="javascript:void(0)" tabindex="-1"
+                                   aria-disabled="true">&raquo;</a>
+                            <#else>
+                                <a class="page-link" href="${pagination.nextPageFullPath!}"
+                                   aria-label="下一页">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </#if>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </@paginationTag>
     </#if>
 </#macro>

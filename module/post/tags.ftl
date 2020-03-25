@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <#list post.tags as tag>
                         <div class="tag">
-                            <a href="/tags/${tag.slugName!}" class="text-muted">
+                            <a href="${tag.fullPath!}" class="text-muted">
                                 <span class="tag-item">
                                     <i class="fas fa-tags mr-1"></i>${tag.name!}
                                 </span>

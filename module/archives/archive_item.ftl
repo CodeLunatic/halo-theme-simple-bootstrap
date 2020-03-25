@@ -18,7 +18,7 @@
         <ul class="title-list">
             <#list archive.posts?sort_by("createTime")?reverse as post>
                 <li class="d-flex flex-sm-row flex-column justify-content-between pr-3">
-                    <a href="${context!}/archives/${post.url!}">${post.title!}</a>
+                    <a href="${post.fullPath!}">${post.title!}</a>
                     <small class="text-muted">${post.createTime?string["yyyy年MM月dd日"]!}</small>
                 </li>
             </#list>

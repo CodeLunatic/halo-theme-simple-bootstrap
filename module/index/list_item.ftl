@@ -12,7 +12,7 @@
             <div class="item-left d-flex flex-column" style="justify-content: space-evenly;">
 
                 <#--文章标题-->
-                <a href="/archives/${post.url!}" class="text-body">
+                <a href="${post.fullPath!}" class="text-body">
                     <h4 class="p-0 m-0 font-weight-bold text-break">
                         ${post.title!}
                     </h4>

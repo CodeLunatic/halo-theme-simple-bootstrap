@@ -10,14 +10,14 @@
                 <div class="card-body">
                     <#list tags as tag>
                         <div class="tag">
-                            <a href="/tags/${tag.slugName!}" class="text-muted">
+                            <a href="${tag.fullPath!}" class="text-muted">
                                 <span class="tag-left">${tag.name!}</span>
                                 <span class="tag-right">${tag.postCount!}</span>
                             </a>
                         </div>
                     </#list>
                     <div class="tag">
-                        <a href="/tags" class="text-muted">
+                        <a href="${tags_url}" class="text-muted">
                             <span class="tag-left">所有标签</span>
                             <span class="tag-right">
                             <@postTag method="count">

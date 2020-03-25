@@ -9,7 +9,7 @@
                         <ul class="list-group list-group-flush">
                             <#list posts as post>
                                 <#if post?index < 5>
-                                    <a href="/archives/${post.url!}"
+                                    <a href="${post.fullPath!}"
                                        class="list-group-item list-group-item-action">${post.title!}
                                     </a>
                                 </#if>
