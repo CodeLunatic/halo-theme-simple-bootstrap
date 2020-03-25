@@ -1,6 +1,6 @@
 # Simple Bootstrap主题
 
->  感谢使用Halo Simple Bootstrap主题
+>  感谢使用Halo Simple Bootstrap主题  
 
 **主题演示地址**：[点击访问](https://halo.cyblogs.top)
 
@@ -39,3 +39,6 @@
 如果你还有什么新奇的想法或者需要什么样的功能，请`issues`
 
 有些界面确实没有灵感，如果你有更好的想法请`issues`
+
+>  其实计划重构代码和刷新设计元素来着，但是一直没有时间，如果有这方面创意可以直接pr给我，收到后会及时处理。  
+>  有时间我一定会处理已知问题的...
