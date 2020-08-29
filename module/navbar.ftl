@@ -23,7 +23,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<#if menu.url?starts_with("/")>${menu.url!}<#else>/${menu.url!}</#if>" target="${menu.target!}">
                                 <#if (menu.icon)?? && menu.icon?trim != ''>
-                                    <span class="d-lg-none d-inline mr-2">${menu.icon}</span>
+                                    <span class="d-lg-none d-inline mr-2"><i class="${menu.icon}"></i></span>
                                 <#else>
                                     <span class="d-lg-none d-inline mr-2"><i class="fas fa-link"></i></span>
                                 </#if>
