@@ -369,7 +369,8 @@ $(function () {
 
     // 初始化处理，在新标签中打开页面
     linkOnBlackPage && $("#content a").filter(function () {
-        let isLinkToCurrentPage = $(this).attr("href").startsWith("#");
+        let titleId = $(this).attr("href");
+        let isLinkToCurrentPage = titleId && titleId.startsWith("#");
         // 给每个链接到当前页面的链接一个点击事件，通过动画滚动到目标位置
         isLinkToCurrentPage && $(this).on('click', function (event) {
             let titleId = $(this).attr("href");
