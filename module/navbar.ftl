@@ -21,7 +21,7 @@
                 <@menuTag method="list">
                     <#list menus?sort_by('priority') as menu>
                         <li class="nav-item">
-                            <a class="nav-link" href="<#if menu.url?starts_with("/")>${menu.url!}<#else>/${menu.url!}</#if>" target="${menu.target!}">
+                            <a class="nav-link" href="${menu.url!}" target="${menu.target!}">
                                 <#if (menu.icon)?? && menu.icon?trim != ''>
                                     <span class="d-lg-none d-inline mr-2">${menu.icon}</span>
                                 <#else>
