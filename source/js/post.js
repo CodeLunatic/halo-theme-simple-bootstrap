@@ -126,16 +126,26 @@ $(function () {
         window.history.replaceState(null, null, baseUrl + anchorId);
     };
 
+    function generateID(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = (hash << 5) - hash + str.charCodeAt(i);
+            // Convert to 32-bit integer
+            hash |= 0;
+        }
+        return 'id-' + hash;
+    }
+
     /**
      * 添加锚点
      * @param where 添加到哪里
      */
     let addAnchorPoint = (where) => {
         // 获取所有的标题
-        let titles = $(`${where} h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]`);
+        let titles = $(`${where} h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]`);
         titles.each(function () {
             // 要添加到界面上的a标签
-            let a = $(`<a id="user-content-${$(this).attr('id')}" class="anchor" aria-hidden="true" href="#${$(this).attr('id')}"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>`);
+            let a = $(`<a id="user-content-${generateID($(this).attr('id'))}" class="anchor" aria-hidden="true" href="#${generateID($(this).attr('id'))}"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>`);
             // 在Title上添加a标签
             $(this).prepend(a);
             // 为a标签添加点击事件
@@ -149,7 +159,7 @@ $(function () {
         });
         // 为每个title绑定点击事件
         titles.on('click', function (event) {
-            changeUrlAnchor(`#${$(this).attr("id")}`);
+            changeUrlAnchor(`#${generateID($(this).attr("id"))}`);
             let offsetTop = $(this).offset().top - 20;
             $("html,body").animate({scrollTop: offsetTop}, 300);
             event.preventDefault();
@@ -165,7 +175,7 @@ $(function () {
      */
     let generateCatalogs = (from, to, marginSpace, success) => {
         // 获取所有的标题
-        let titles = $(`${from} h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]`);
+        let titles = $(`${from} h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]`);
         // 得到标题数字的最小数字，用来计算每个标题的margin-left间距，例如["h2", "h3"]则返回2
         let minTitleNumber = Math.min.apply(null, [...new Set(titles.get().map(value => value.tagName[1]))]);
         // 如果没有title的话返回0
@@ -179,7 +189,7 @@ $(function () {
                 let titleLevel = parseInt($(this).prop("tagName")[1]) - minTitleNumber;
                 catalogs.append(
                     `<p class='catalog-item'>
-                        <a href="javascript:void(0)" style="margin-left: ${titleLevel * marginSpace}rem;" data-catalog-target="${$(this).attr('id')}">${$(this).text()}</a>
+                        <a href="javascript:void(0)" style="margin-left: ${titleLevel * marginSpace}rem;" data-catalog-target="${generateID($(this).attr('id'))}">${$(this).text()}</a>
                     </p>`
                 );
             });
@@ -187,14 +197,22 @@ $(function () {
             $(to).append(catalogs);
             // 为目录中每个链接添加一个点击事件
             $(`${to} a[data-catalog-target]`).on('click', function (event) {
-                let titleId = `#${$(this).attr("data-catalog-target")}`;
-                changeUrlAnchor(titleId);
-                let offsetTop = $(titleId).offset().top - 20;
+                let titleId = `${$(this).attr("data-catalog-target")}`;
+                changeUrlAnchor('#' + titleId);
+                let offsetTop = $('#user-content-' + titleId).offset().top - 20;
                 $("html,body").animate({scrollTop: offsetTop}, 300);
                 event.preventDefault();
             });
             // 调用用户自定义的成功添加目录后的方法
             success();
+            const urlHash = location.hash;
+            if (urlHash) {
+                window.setTimeout(() => {
+                    const titleId = urlHash.substring(1);
+                    let offsetTop = $('#user-content-' + titleId).offset().top - 20;
+                    $("html,body").animate({scrollTop: offsetTop}, 300);
+                })
+            }
         })();
     };
 
